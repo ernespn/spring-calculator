@@ -11,10 +11,10 @@ public class Result {
     }
     
     public Integer getResult() {
-		return result;
-	}
+	return result;
+    }
 
-	public String getFrom() {
-		return from;
-	}
+    public String getFrom() {
+	return from;
+    }
 }
