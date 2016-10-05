@@ -1,11 +1,13 @@
 package calculator.repositories;
 
-import java.util.List;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
 import calculator.models.Todo;
 
-public interface ITodoRepository {
+@Repository
+public interface ITodoRepository extends MongoRepository<Todo, String> {
 
-	List<Todo> GetAll();
+	Todo findById(String string);
 
 }
