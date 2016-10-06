@@ -9,17 +9,8 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration;
-import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.TestConfiguration;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import calculator.models.Todo;
 import calculator.repositories.ITodoRepository;
@@ -41,7 +32,7 @@ public class todoServiceTests {
     
 	@Test
 	public void ItShouldGetListOfTodos() throws Exception{
-		List<Todo> list = todoBuilder.AddTodo().Build();
+		List<Todo> list = todoBuilder.AddTodo().GetTodoList();
 		when(this.todoRepository.findAll()).thenReturn(list);
 		
 		List<Todo> todos = todoService.GetAllTodos();
@@ -53,7 +44,7 @@ public class todoServiceTests {
 	@Test
 	public void ItShouldGetById() throws Exception{
 		String id = "1";
-		List<Todo> list = todoBuilder.AddTodoWithId("2").AddTodoWithId(id).AddTodoWithId("3").Build();
+		List<Todo> list = todoBuilder.AddTodoWithId("2").AddTodoWithId(id).AddTodoWithId("3").GetTodoList();
 		when(this.todoRepository.findById(id)).thenReturn(list.get(1));
 		
 		Todo todo = todoService.GetById(id);
@@ -74,10 +65,12 @@ public class todoServiceTests {
 	@Test
 	public void ItShouldDeleteExistingTodo() throws Exception{
 		String id = "1";
-		List<Todo> list = todoBuilder.AddTodoWithId("2").AddTodoWithId(id).AddTodoWithId("3").Build();
+		List<Todo> list = todoBuilder.AddTodoWithId("2").AddTodoWithId(id).AddTodoWithId("3").GetTodoList();
+		when(this.todoRepository.findById(id)).thenReturn(list.get(1));
 				
-		todoService.DeleteTodo(list.get(1));
+		todoService.DeleteTodo(id);
 		
+		verify(todoRepository, times(1)).findById(id);
 		verify(todoRepository, times(1)).delete(list.get(1));
 	}
 }

@@ -12,17 +12,16 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
-public class todoControllerTests {
+public class GreetingControllerTests {
 
 	@Autowired
 	private TestRestTemplate restTemplate;
 
     @Test
-    public void exampleTest() {
+    public void GreetingTest() {
         String body = this.restTemplate.getForObject("/greeting", String.class);
         assertThat(body).contains("Hello, World");
     }
-
 
 }
 

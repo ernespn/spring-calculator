@@ -3,7 +3,6 @@ package calculator.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import calculator.models.Todo;
@@ -20,7 +19,8 @@ public class TodoService {
 	}
 
 	public List<Todo> GetAllTodos() {
-		return this.repository.findAll();
+		List<Todo> all = this.repository.findAll();
+		return all;
 	}
 
 	public Todo GetById(String string) {
@@ -32,7 +32,8 @@ public class TodoService {
 		this.repository.save(newTodo);
 	}
 
-	public void DeleteTodo(Todo todo) {
+	public void DeleteTodo(String id) {
+		Todo todo = this.GetById(id);
 		this.repository.delete(todo);
 	}
 

@@ -16,3 +16,18 @@ really simple calculator using spring REST and Docker
 - Docker build -rm -t imagename .
 - Docker run -p 8081:8081 imagename
 - visit http://{docker-machine ip}:8081/add/2/3
+
+#Spring Todo service
+
+# Requirements
+- Same than the calculator
+- mongodb
+
+# Usage
+## STS:
+- import maven project
+- run it
+- http://localhost:8081/todo -> to get all
+- http://localhost:8081/todo/1 -> to get the todo with the ID = 1
+- http://localhost:8081/todo (POST {"id":"5", "what":"something to do"}) -> to insert a new todo
+- http://localhost:8081/todo/1 (DELETE) -> to delete the todo with id = 1

@@ -3,8 +3,6 @@ package calculator;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.boot.test.context.TestConfiguration;
-
 import calculator.models.Todo;
 
 public class todoBuilder {
@@ -19,8 +17,12 @@ public class todoBuilder {
 		return this;
 	}
 	
-	public List<Todo> Build(){
+	public List<Todo> GetTodoList(){
 		return this.todos;
+	}
+	
+	public Todo GetFirstTodo(){
+		return this.todos.get(0);
 	}
 
 	public todoBuilder AddTodoWithId(String id) {
