@@ -1,30 +1,33 @@
-# spring-calculator
+# Services made with Spring
+
+
+# calculator
 really simple calculator using spring REST and Docker
 
-# Requirements
+## Requirements
 - Java 8
 - Maven 3.3.9
 - STS (optional)
 
-# Usage
-## STS:
+## Usage
+### STS:
 - import maven project
 - run it
 - visit http://localhost:8081/add/2/3
 
-## Docker :
+### Docker :
 - Docker build -rm -t imagename .
 - Docker run -p 8081:8081 imagename
 - visit http://{docker-machine ip}:8081/add/2/3
 
-#Spring Todo service
+# Todo service
 
-# Requirements
+## Requirements
 - Same than the calculator
 - mongodb
 
-# Usage
-## STS:
+## Usage
+### STS:
 - import maven project
 - run it
 - http://localhost:8081/todo -> to get all
@@ -33,7 +36,7 @@ really simple calculator using spring REST and Docker
 - http://localhost:8081/todo/1 (DELETE) -> to delete the todo with id = 1
 
 
-## Mongo DB
+### Mongo DB
 - Build a mongo container: docker build db/
 - Run the container: docker run -p 27017:27017 --name mongo_dev_instance -d mongo
 - Change the host and port to point to that container in application.properties 
