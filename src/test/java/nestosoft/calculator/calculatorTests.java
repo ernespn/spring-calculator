@@ -1,8 +1,8 @@
-package calculator;
+package nestosoft.calculator;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-import calculator.models.Result;
+import nestosoft.calculator.models.Result;
 
 public class calculatorTests {
 	@Test

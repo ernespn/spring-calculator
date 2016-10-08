@@ -1,4 +1,4 @@
-package calculator;
+package nestosoft.todo;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.times;
@@ -12,9 +12,9 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import calculator.models.Todo;
-import calculator.repositories.ITodoRepository;
-import calculator.services.TodoService;
+import nestosoft.todo.models.Todo;
+import nestosoft.todo.repositories.ITodoRepository;
+import nestosoft.todo.services.TodoService;
 
 public class todoServiceTests {
 	private todoBuilder todoBuilder = new todoBuilder();

@@ -1,4 +1,4 @@
-package calculator.models;
+package nestosoft.greeting.models;
 
 public class Greeting {
 

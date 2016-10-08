@@ -1,4 +1,4 @@
-package calculator.models;
+package nestosoft.calculator.models;
 
 import lombok.Data;
 

@@ -1,9 +1,9 @@
-package calculator.repositories;
+package nestosoft.todo.repositories;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import calculator.models.Todo;
+import nestosoft.todo.models.Todo;
 
 @Repository
 public interface ITodoRepository extends MongoRepository<Todo, String> {

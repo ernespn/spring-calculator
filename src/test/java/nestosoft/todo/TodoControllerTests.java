@@ -1,4 +1,4 @@
-package calculator;
+package nestosoft.todo;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Matchers.any;
@@ -26,8 +26,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import calculator.models.Todo;
-import calculator.services.TodoService;
+import nestosoft.todo.models.Todo;
+import nestosoft.todo.services.TodoService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)

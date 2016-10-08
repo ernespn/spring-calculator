@@ -1,4 +1,4 @@
-package calculator;
+package nestosoft;
 
 
 import org.springframework.boot.SpringApplication;

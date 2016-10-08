@@ -1,9 +1,9 @@
-package calculator;
+package nestosoft.todo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import calculator.models.Todo;
+import nestosoft.todo.models.Todo;
 
 public class todoBuilder {
 	List<Todo> todos;

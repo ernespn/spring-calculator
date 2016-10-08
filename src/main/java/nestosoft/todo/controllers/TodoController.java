@@ -1,4 +1,4 @@
-package calculator.controllers;
+package nestosoft.todo.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import calculator.models.Todo;
-import calculator.services.TodoService;
+import nestosoft.todo.models.Todo;
+import nestosoft.todo.services.TodoService;
 
 @RestController
 public class TodoController {

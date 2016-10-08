@@ -1,12 +1,12 @@
-package calculator.services;
+package nestosoft.todo.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import calculator.models.Todo;
-import calculator.repositories.ITodoRepository;
+import nestosoft.todo.models.Todo;
+import nestosoft.todo.repositories.ITodoRepository;
 
 @Service
 public class TodoService {
