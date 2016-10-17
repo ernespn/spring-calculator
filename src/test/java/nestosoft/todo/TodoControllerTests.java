@@ -47,7 +47,8 @@ public class TodoControllerTests {
     	List<Todo> expectedList = todoBuilder.AddTodo().AddTodoWithId(id).GetTodoList();
     	when(this.todoService.GetAllTodos()).thenReturn(expectedList);
 	
-    	List<Todo> actualList = this.restTemplate.getForObject("/todo", List.class);
+    	@SuppressWarnings("unchecked")
+		List<Todo> actualList = this.restTemplate.getForObject("/todo", List.class);
         
     	assertThat(expectedList.size()).isEqualTo(actualList.size());
     	verify(this.todoService, times(1)).GetAllTodos();
