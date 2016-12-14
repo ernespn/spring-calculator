@@ -50,3 +50,5 @@ overridedb.*
 .factorypath
 dump.rdb
 transaction-logs
+*.log
+*.log.lck
