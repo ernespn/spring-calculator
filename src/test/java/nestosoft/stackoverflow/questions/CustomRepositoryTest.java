@@ -21,4 +21,15 @@ public class CustomRepositoryTest {
         assertThat(array[0].getClass()).isEqualTo(SomethingA.class);
         assertThat(array[1].getClass()).isEqualTo(SomethingB.class);
     }
+
+    @Test
+    public void itShouldReturn2SomethingsWithTheTypedRepos(){
+        CustomRepository customRepository = new CustomRepository();
+
+        Stream<Something> stream = customRepository.getTypedStream();
+
+        Object[] array = stream.toArray();
+        assertThat(array[0].getClass()).isEqualTo(SomethingA.class);
+        assertThat(array[1].getClass()).isEqualTo(SomethingB.class);
+    }
 }

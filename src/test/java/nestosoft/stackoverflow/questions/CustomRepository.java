@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class CustomRepository implements  SomeRepository{
+public class CustomRepository implements  SomeRepository, SomeTypedRepository{
 
     @Override
     public Stream<? extends Something> getStream() {
@@ -15,4 +15,16 @@ public class CustomRepository implements  SomeRepository{
         list.add(b);
         return list.stream();
     }
+
+    @Override
+    public Stream getTypedStream() {
+        SomethingA aa = new SomethingA();
+        SomethingB bb = new SomethingB();
+        List<Something> list = new ArrayList<>();
+        list.add(aa);
+        list.add(bb);
+        return list.stream();
+    }
+
+
 }
